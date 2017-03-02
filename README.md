@@ -2,7 +2,7 @@
 
 Parsing C++ code is a very hard problem because C++ has an [undecidable grammar](http://www.yosefk.com/c++fqa/defective.html#defect-2). This is a pain when you want to generate wrappers based on C++ classes, like we do for the [JerryScript](http://jerryscript.net) project. Instead of parsing the code we opted for a different approach: parsing the debug information the compiler generates. This guarantees that we have a 100% accurate understanding of the application and its functions.
 
-[**Live demo**](http://janjongboom.com/arm-objdump-parser/demo/web/)
+[**Live demo**](http://janjongboom.com/arm-objdump-parser/demo/web/objdump.html)
 
 The ARM Objdump Parser (AOP) is a JavaScript module (for node.js and web) which takes the output of `arm-none-eabi-objdump` and creates a searchable tree. For example, here is the query and the output for the [DigitalOut](https://github.com/ARMmbed/mbed-os/blob/aff49d8/drivers/DigitalOut.h#L63) constructor in mbed OS 5:
 
