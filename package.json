@@ -1,0 +1,19 @@
+{
+  "name": "arm-objdump-parser",
+  "version": "1.0.0",
+  "description": "Parses output from arm-none-eabi-objdump",
+  "main": "objdump-parser.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janjongboom/arm-objdump-parser.git"
+  },
+  "keywords": [
+    "objdump"
+  ],
+  "author": "Jan Jongboom <jan.jongboom@arm.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janjongboom/arm-objdump-parser/issues"
+  },
+  "homepage": "https://github.com/janjongboom/arm-objdump-parser#readme"
+}
