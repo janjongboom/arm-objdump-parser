@@ -1,4 +1,4 @@
-var objdumpParser = require('../objdump-parser');
+var objdumpParser = require('../../objdump-parser');
 var fs = require('fs');
 
 var dump = objdumpParser(fs.readFileSync('./symbols.txt', 'utf-8'));

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Objdump parser</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      small {
+        font-size: 0.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Objdump parser <small><a href="https://github.com/janjongboom/arm-objdump-parser">(What is this?)</a></small></h1>
+    <p>Status: <span class="status">Loading objdump...</span></p>
+
+    <h2>How to use it</h2>
+    <p>After the objdump is loaded, open your browser's console, and explore the tree. For example:</p>
+    <pre><code>dump.nodes.filter(f => f.name === 'DigitalOut' && f.tag === 'subprogram' && f.children.length === 3)[0]</code></pre>
+    <p>Gives you:</p>
+    <p><img src="objdump1.png"></p>
+
+    <script src="../../objdump-parser.js"></script>
+    <script>
+      var x = new XMLHttpRequest();
+      x.onload = function() {
+        if (x.status === 200) {
+          window.dump = parseObjdump(x.responseText);
+          document.querySelector('.status').textContent = 'Objdump is loaded';
+        }
+        else {
+          document.querySelector('.status').textContent = 'Loading objdump failed: ' + x.status;
+        }
+      };
+      x.open('GET', '../symbols.txt');
+      x.send();
+    </script>
+  </body>
+</html>
